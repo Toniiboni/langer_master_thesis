@@ -6,13 +6,13 @@ import codecs
 from numba import prange, njit
 
 gap_penalty_score = -1
-match_score = 1
+match_score_value = 1
 mismatch_penalty_score = -1
 
 @njit
 def match_score(a, b):
     if a == b:
-        return match_score
+        return match_score_value
     elif a == '-' or b == '-':
         return gap_penalty_score
     else:
